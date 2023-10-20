@@ -1,0 +1,31 @@
+{
+  "name": "x4-pipe-rive-demo-server",
+  "version": "1.0.0",
+  "description": "React app to display X4:Foundations game data with a Rive animation",
+  "main": "index.ts",
+  "workspaces": [
+    "client"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "concurrently \"npx tsc\" \"npm run -w client build\"",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npm run -w client start\" \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+  },
+  "keywords": ["X4", "Socket", "Websocket", "API", "X4:Foundations", "SimPit", "HomeCockpit", "MFD", "SimulatedCockpit"],
+  "author": "Beko Pharm",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.20",
+    "@types/node": "^20.8.7",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.2.2"
+  }
+}
